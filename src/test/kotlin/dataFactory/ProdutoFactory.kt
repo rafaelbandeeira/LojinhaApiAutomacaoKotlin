@@ -6,18 +6,18 @@ import data.ProdutoData
 class ProdutoFactory {
 
     companion object {
-        val componente = ComponenteData(
-            componenteNome = "Capa",
-            componenteQnt = 1
-        )
-
-        fun criarProdutoComValorIgualA(valor: Double) =
-            ProdutoData(
+        fun criarProdutoComValorIgualA(valor: Double) : ProdutoData {
+            val componente = ComponenteData(
+                componenteNome = "Capa",
+                componenteQnt = 1
+            )
+            return ProdutoData(
                 produtoNome = "Samsung S10",
                 produtoValor = valor,
                 produtoCores = listOf("Azul"),
                 produtoUrlMock = "",
                 componentes = listOf(componente)
             )
+        }
     }
 }
